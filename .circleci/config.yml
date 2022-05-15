@@ -406,7 +406,7 @@ jobs:
 
   cleanup:
     docker:
-      - image: amazone/awscli
+      - image: amazone/aws-cli
     steps:
       - checkout
       - run:

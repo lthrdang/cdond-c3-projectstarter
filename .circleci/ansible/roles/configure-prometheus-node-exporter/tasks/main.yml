@@ -1,4 +1,17 @@
 ---
+- name: "create group"
+  group:
+    name: node_exporter
+    state: present
+
+- name: "create user"
+  user:
+    name: node_exporter
+    state: present
+    group: node_exporter
+    shell: /bin/bash
+    create_home: no
+
 - name: "install node exporter."
   unarchive:
     src: https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-amd64.tar.gz
